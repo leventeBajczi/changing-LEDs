@@ -2,6 +2,7 @@
 #define HEADER_H
 
 #include <stdio.h>
+#include <math.h>
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
 #include "esp_wifi.h"
@@ -12,6 +13,7 @@
 #include "nvs_flash.h"
 #include "tcpip_adapter.h"
 #include "lwip/api.h"
+#include "driver/ledc.h"
 #include "string.h"
 
 void app_main();
@@ -24,5 +26,7 @@ void build_form(char**);
 void parse_form(char*);
 
 void lights_task();
+void displayLeds(int, int, int);
+void doTraverseStep();
 
 #endif
