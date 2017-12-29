@@ -10,9 +10,19 @@
 #include "esp_event.h"
 #include "esp_event_loop.h"
 #include "nvs_flash.h"
+#include "tcpip_adapter.h"
+#include "lwip/api.h"
+#include "string.h"
 
 void app_main();
+
+
 void wifi_task();
+static void http_server_netconn_serve(struct netconn *);
+static void http_server_task();
+void build_form(char**);
+void parse_form(char*);
+
 void lights_task();
 
 #endif
