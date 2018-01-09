@@ -10,7 +10,7 @@ Using the ESP-32 as a controller
 
 ## Wiring
 * Pins 5, 18, 19 are RED, GREEN and BLUE, respectively (high-active)
-* If overall current exceeds the 40mA allowed by the GPIO pins, or higher than 5V is needed, then use transistors with their Base connected to the above mentioned pins. Othrwise (e.g. with a single LED) connect their positive ends to these pins.
+* If overall current exceeds the 40mA allowed by the GPIO pins, or higher than 5V is needed, then use transistors with their Base connected to the above mentioned pins. Otherwise (e.g. with a single LED) connect their positive ends to these pins.
 
 ## Usage
 0. Clone the repo
