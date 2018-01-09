@@ -1,11 +1,10 @@
 #include "header.h"
 
-extern int red, green, blue, manual;
+extern int red, green, blue, manual, i_speed, i_brightness, i_speeda, i_speedb, i_alpha, i_beta;
+double slowness, brightness, speeda, speedb, alpha, beta;
 
-double localred = 0.0, localgreen = 0.0, localblue = 1023.0, alpha = 0.0, beta = 0.0;
+double localred = 0.0, localgreen = 0.0, localblue = 0.0;
 double corr = 2 * 3.14159265 / 360;
-int speeda = 1, speedb = 2;
-int brightness = 1023;
 
 
 #define LEDC_HS_TIMER          LEDC_TIMER_0
@@ -49,12 +48,12 @@ void lights_task()
     printf("Started lights task...\n");
 
     ledc_timer_config_t ledc_timer = {
-        .bit_num = 10, // resolution of PWM duty
-        .freq_hz = 5000,                      // frequency of PWM signal
-        .speed_mode = LEDC_HS_MODE,           // timer mode
-        .timer_num = LEDC_HS_TIMER            // timer index
+        .bit_num = 10, 
+        .freq_hz = 5000,                      
+        .speed_mode = LEDC_HS_MODE,           
+        .timer_num = LEDC_HS_TIMER            
     };
-    // Set configuration of timer0 for high speed channels
+
     ledc_timer_config(&ledc_timer);
 
     
@@ -68,7 +67,7 @@ void lights_task()
     {
         if(manual) displayLeds(red*1023/100, green*1023/100, blue*1023/100);
         else doTraverseStep();
-        vTaskDelay(5);
+        vTaskDelay(slowness);
     } 
 }
 

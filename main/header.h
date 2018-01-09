@@ -16,13 +16,15 @@
 #include "driver/ledc.h"
 #include "string.h"
 
+#define SSID "UPC"
+#define PASS "19670227"
+
 void app_main();
 
 
 void wifi_task();
-static void http_server_netconn_serve(struct netconn *);
-static void http_server_task();
-void build_form(char**);
+void http_server_netconn_serve(struct netconn *);
+void http_server_task();
 void parse_form(char*);
 
 void lights_task();
