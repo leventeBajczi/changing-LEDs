@@ -15,7 +15,7 @@ Using the ESP-32 as a controller
 ## Usage
 0. Clone the repo
 1. Set the SSID and PASS definitions in `header.h` for an available network's name and password.
-2. Plug in the ESP32 board / chip over a serial connection, then compile an flash (if your user can access serial ports without privilege escalation, omit the `sudo -E`):
+2. Plug in the ESP32 board / chip over a serial connection, then compile and flash (if your user can access serial ports without privilege escalation, omit the `sudo -E`):
 ```
     sudo -E make flash
 ```
