@@ -12,6 +12,8 @@ Using the ESP-32 as a controller
 * Pins 5, 18, 19 are RED, GREEN and BLUE, respectively (high-active)
 * If overall current exceeds the 40mA allowed by the GPIO pins, or higher than 5V is needed, then use transistors with their Base connected to the above mentioned pins. Otherwise (e.g. with a single LED) connect their positive ends to these pins.
 
+For more info, look at the wiring sketches in the `wiring` folder!
+
 ## Usage
 0. Clone the repo
 1. Set the SSID and PASS definitions in `header.h` for an available network's name and password.
