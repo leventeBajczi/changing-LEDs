@@ -16,8 +16,8 @@
 #include "driver/ledc.h"
 #include "string.h"
 
-#define SSID "UPC"
-#define PASS "19670227"
+#define SSID ""
+#define PASS ""
 
 void app_main();
 
